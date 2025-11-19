@@ -3,21 +3,37 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import axios from 'axios'
+import './assets/style.scss'
 async  function getRandomCatUrl()
 {
-  const apikey ='live_abulHayZU0WrnHDun8A2oIW6HuG6qXPYkGuV6Q1HMe1SY87w5xGZQOwprFWxUSBh'
+  const apikey=''
   const response = await axios.get(" https://api.thecatapi.com/v1/images/search?api_key="+ apikey);
   return response.data[0].url;
 }
  function App() {
   const [url, setUrl] = useState('')
+  const [isLoading ,setIsLoading] = useState(false)
+  const handleClick = async ()=>
+  {
+    setIsLoading(true)
+    setUrl(await getRandomCatUrl())
+    setTimeout(() => {
+      setIsLoading(false)
+    },1000)
 
+
+  }
   return (
     <>
      <div>
-      <button onClick={async ()=>setUrl(await getRandomCatUrl())}>click de lay anh </button>
-      {url && <img src={url} alt="anh" />}
+      <button onClick={async ()=>handleClick()}>click de lay anh </button>
      </div>
+     <div> 
+      {url && <img src={url} alt="" />}
+     </div>
+     {isLoading && <div className='Loading'onClick={async () => setIsLoading(false)}>
+               Loading.....
+     </div>}
     </>
   )
 }
