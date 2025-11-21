@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    border-top: 1px solid rgb(206, 206, 206);
+    padding-top:5px;
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2);
+    .nav{
+        display: flex;
+        list-style: none;
+        // thẻ li
+        &-item{
+            width: 25%;
+        }
+        // thẻ a
+        &-item-text{
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: gray;
+            width: 100%;
+            align-items: center;
+            padding: 10px;
+            transition: all 0.3s ease-in-out;
+            // thẻ i trong thẻ a (icon)
+            .icon {
+                font-size: 40px;
+            }
+            &.active{
+                color: rgb(47, 49, 110);
+                transform: scale(1.2);
+        }
+    }
+    }
+}
+.personal-info{
+    .pictures{
+        position: relative;
+        .img{
+            max-width: 100% ;
+            object-fit: cover;
+        }
+        .background>img{
+            height: 30vh;
+            width: 100vw;
+            max-height: 300px;
+        }
+        .avatar>img{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3.5px white;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translate(-50%, 10%);
+    }
+}
+}
+.show-more{
+    display: block;
+  position: absolute;
+  right: 16px;
+  bottom: 90px;
+  z-index: 50;
+  background: #fff;
+  border-radius: 12px;
+  padding: 6px;
+  min-width: 160px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(12, 20, 30, 0.12);
+  transition: transform .18s ease, opacity .18s ease;
+  transform-origin: top right;
+
+  &::after{
+    content: "";
+    position: absolute;
+    right: 20px;
+    bottom: -8px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    transform: rotate(45deg);
+    box-shadow: 0 3px 6px rgba(12,20,30,0.06);
+  }
+
+  .sm-container{
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+
+    li{
+      a{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        width: 100%;
+        color: #111;
+        text-decoration: none;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+      }
+    }
+}
+}
+
+.show-more.open{
+    display: block;
+}
