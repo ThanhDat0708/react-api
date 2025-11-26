@@ -4,6 +4,7 @@ import MainLayout from './layouts/MainLayout.tsx'
 import PersonalInfor from './pages/PersonalInfor.tsx'
 import Projects from './pages/Projects.tsx'
 import Skills from './pages/Skill.tsx'
+import NotFound from './pages/NotFound.tsx'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
                 <Route path='/' element ={<PersonalInfor/>}/>
                 <Route path='/projects' element ={<Projects/>}/>
                 <Route path='/skills' element ={<Skills/>}/>
+                <Route path='*' element ={<NotFound/>}/>
             </Route>
        </Routes>
        </BrowserRouter>
